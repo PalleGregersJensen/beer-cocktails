@@ -1,0 +1,60 @@
+body{
+    background-color: red;
+    padding: 0%;
+    margin: 0%;
+}
+
+.grid-container { 
+    display: grid; 
+    grid-template-columns: 1fr 1fr 1fr ;
+    grid-template-rows: 1fr 1fr 1fr; 
+    grid-auto-rows: auto;
+} 
+
+.grid_item1 {
+    color: white;
+    background-color: blue;
+    height: 33.33vh;
+    width: 33.33vw
+
+}
+
+.grid_item2 {
+    color: white;
+    background-color: black;
+}
+
+.grid_item3 {
+    color: white;
+    background-color: green;
+}
+
+.grid_item4 {
+    color: white;
+    background-color: pink;
+}
+
+.grid_item5 {
+    color: white;
+    background-color:aquamarine;
+}
+
+.grid_item6 {
+    color: white;
+    background-color: yellow;
+}
+
+.grid_item7 {
+    color: white;
+    background-color: grey;
+}
+
+.grid_item8 {
+    color: white;
+    background-color:orange;
+}
+
+.grid_item9 {
+    color: white;
+    background-color: violet;
+}
