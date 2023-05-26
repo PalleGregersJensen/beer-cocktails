@@ -8,8 +8,6 @@ body{
 .grid-container { 
     display: grid; 
     grid-template-columns: 1fr  ;
-    grid-template-rows: 1fr; 
-
 
 } 
 }
@@ -18,9 +16,7 @@ body{
 @media (max-width: 600px) {
 .grid-container { 
     display: grid; 
-    grid-template-columns: 2fr  ;
-    grid-template-rows: 1fr; 
-
+    grid-template-columns: repeat(2*1fr)  ;
 
 } 
 }
@@ -29,8 +25,8 @@ body{
 @media (max-width: 800px) {
 .grid-container { 
     display: grid; 
-    grid-template-columns: 3fr  ;
-    grid-template-rows: 1fr; 
+    grid-template-columns: repeat(3*1fr);
+ 
 
 
 } 
@@ -39,9 +35,7 @@ body{
 @media (max-width: 1000px) {
 .grid-container { 
     display: grid; 
-    grid-template-columns: 2fr  ;
-    grid-template-rows: 1fr; 
-
+    grid-template-columns: repeat(4*1fr);
 
 } 
 }
