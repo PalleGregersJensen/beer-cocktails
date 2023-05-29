@@ -4,10 +4,10 @@ window.addEventListener("load", start);
 
 async function start() {
   console.log("Javascript kører!");
-  const beers = await getData();
-  console.log(beers);
-  showBeers(beers);
-  showRodenbach(beers);
+  const rodenbachObject = await getData();
+  console.log(rodenbachObject);
+  showBeers(rodenbachObject);
+  showRodenbach(rodenbachObject);
 }
 
 async function getData() {
@@ -18,27 +18,27 @@ async function getData() {
   return data;
 }
 
-function showBeers(beers) {
-  let rodenbach = "";
-  for (let x in beers) {
-    rodenbach += beers[x] + " ";
+function showBeers(rodenbachObject) {
+  let rodenbachText = "";
+  for (let x in rodenbachObject) {
+    rodenbachText += rodenbachObject[x] + " ";
   }
-  console.log(beers);
-  console.log(rodenbach);
+  console.log(rodenbachObject);
+  console.log(rodenbachText);
   // return rodenbach;
-  document.querySelector("#name").textContent = `Name: ${beers.name}`;
-  document.querySelector("#country").textContent = `Country ${beers.country}`;
-  document.querySelector("#price").textContent = `Price: ${beers.price}`;
-  document.querySelector("#flavour").textContent = `Flavour: ${beers.flavour}`;
+  document.querySelector("#name").textContent = `Name: ${rodenbachObject.name}`;
+  document.querySelector("#country").textContent = `Country ${rodenbachObject.country}`;
+  document.querySelector("#price").textContent = `Price: ${rodenbachObject.price}`;
+  document.querySelector("#flavour").textContent = `Flavour: ${rodenbachObject.flavour}`;
 
-  return beers;
+  return rodenbachObject;
 }
 
-function showRodenbach(beers) {
-    let rodenbachName = rodebachNameToUpperCase(beers);
-    let rodenbachPrice = rodenbachPriceToUppercase(beers);
-    let rodenbachCountry = rodenbachCountryToUppercase(beers);
-    let rodenbachFlavour = rodenbachFlavourToUppercase(beers);
+function showRodenbach(beerObject) {
+    let rodenbachName = rodebachNameToUpperCase(beerObject);
+    let rodenbachPrice = rodenbachPriceToUppercase(beerObject);
+    let rodenbachCountry = rodenbachCountryToUppercase(beerObject);
+    let rodenbachFlavour = rodenbachFlavourToUppercase(beerObject);
   const rodenbachelements =
     /*html*/
     `<section>
@@ -52,11 +52,11 @@ function showRodenbach(beers) {
   console.log(rodenbachelements);
 }
 
-function rodebachNameToUpperCase(beers) {
-  let nameOfRodenbach = beers.name;
+function rodebachNameToUpperCase(beerObject) {
+  let nameOfRodenbach = beerObject.name;
   const firstLetterOfnameOfRodenbach = nameOfRodenbach[0].toUpperCase();
   console.log(firstLetterOfnameOfRodenbach);
-  let odendenbach = beers.name;
+  let odendenbach = beerObject.name;
   odendenbach = odendenbach.substring(1);
   console.log(odendenbach);
   nameOfRodenbach = `${firstLetterOfnameOfRodenbach}${odendenbach}`;
@@ -64,11 +64,11 @@ function rodebachNameToUpperCase(beers) {
   return nameOfRodenbach;
 }
 
-function rodenbachPriceToUppercase(beers) {
-    let priceOfRodenbach = beers.price;
+function rodenbachPriceToUppercase(beerObject) {
+    let priceOfRodenbach = beerObject.price;
     const firstLetterOfPriceOfRodenbach = priceOfRodenbach[0].toUpperCase();
     console.log(firstLetterOfPriceOfRodenbach);
-    let odendenbachPrice = beers.price;
+    let odendenbachPrice = beerObject.price;
     odendenbachPrice = odendenbachPrice.substring(1);
     console.log(odendenbachPrice);
     priceOfRodenbach = `${firstLetterOfPriceOfRodenbach}${odendenbachPrice}`;
@@ -76,11 +76,11 @@ function rodenbachPriceToUppercase(beers) {
     return priceOfRodenbach;
 }
 
-function rodenbachCountryToUppercase(beers) {
-  let countryOfRodenbach = beers.country;
+function rodenbachCountryToUppercase(beerObject) {
+  let countryOfRodenbach = beerObject.country;
   const firstLetterOfCountryOfRodenbach = countryOfRodenbach[0].toUpperCase();
   console.log(firstLetterOfCountryOfRodenbach);
-  let odendenbachCountry = beers.country;
+  let odendenbachCountry = beerObject.country;
   odendenbachCountry = odendenbachCountry.substring(1);
   console.log(odendenbachCountry);
   countryOfRodenbach = `${firstLetterOfCountryOfRodenbach}${odendenbachCountry}`;
@@ -88,11 +88,11 @@ function rodenbachCountryToUppercase(beers) {
   return countryOfRodenbach;
 }
 
-function rodenbachFlavourToUppercase(beers) {
-  let flavourOfRodenbach = beers.flavour;
+function rodenbachFlavourToUppercase(beerObject) {
+  let flavourOfRodenbach = beerObject.flavour;
   const firstLetterOfFlavourOfRodenbach = flavourOfRodenbach[0].toUpperCase();
   console.log(firstLetterOfFlavourOfRodenbach);
-  let odendenbachFlavour = beers.flavour;
+  let odendenbachFlavour = beerObject.flavour;
   odendenbachFlavour = odendenbachFlavour.substring(1);
   console.log(odendenbachFlavour);
   flavourOfRodenbach = `${firstLetterOfFlavourOfRodenbach}${odendenbachFlavour}`;
